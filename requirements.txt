@@ -16,6 +16,6 @@ requests==2.23.0
 scikit-learn==0.24.2
 scipy==1.6.2
 sqlparse==0.4.1
-tensorflow==2.4.1
+tensorflow==2.0.0
 virtualenv==20.0.29+ds
 Werkzeug==2.0.0
