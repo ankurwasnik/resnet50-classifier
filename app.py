@@ -1,14 +1,19 @@
-from copy import Error
 from flask import Flask, redirect, url_for , render_template , request , flash
 from werkzeug.utils import secure_filename
-from keras.applications.vgg19 import preprocess_input,decode_predictions  , VGG19
+#from keras.applications.vgg16 import preprocess_input,decode_predictions  , VGG16
 from keras.preprocessing.image import load_img , img_to_array
 import os
+from tensorflow.keras.applications.resnet50 import ResNet50
+from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
+import numpy as np
+
 
           
 app = Flask(__name__)
 ALLOWDED_EXTENSION = ["png" , "jpg" , "jpeg"]
-model = VGG19()
+#model = VGG16()
+model = ResNet50(weights='imagenet')
+
 #function 
 '''
 Name        :allowded_file
@@ -42,6 +47,7 @@ def login():
          image = preprocess_input(image)
          yhat = model.predict(image)
          label = decode_predictions(yhat)
+         print(label)
          label = label[0][0]
          classification = '%s (%.2f%%)' %(label[1] , label[2]*100)  
          #srcpath= str(userfile.filename)
