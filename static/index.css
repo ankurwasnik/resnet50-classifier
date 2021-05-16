@@ -1,0 +1,16 @@
+.container{
+    margin-top: 5%;
+    height: 100vh;
+}
+input{
+    margin-top: 16px;
+    border: gray;
+}
+.result{
+    margin-top: 10%;
+    margin-bottom: 30%;
+    padding: 16px;
+}
+button{
+    margin-top: 16px;
+}
